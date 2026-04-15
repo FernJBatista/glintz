@@ -114,7 +114,7 @@ export function AppSidebar() {
   return (
     <aside
       className={cn(
-        "flex h-screen shrink-0 flex-col justify-between border-r border-alt-border bg-alt-background transition-[width] duration-200",
+        "flex h-screen shrink-0 flex-col justify-between border-r border-alt-border bg-background transition-[width] duration-200",
         isCollapsed ? "w-[56px]" : "w-[180px]"
       )}
     >
@@ -128,7 +128,7 @@ export function AppSidebar() {
           <button
             type="button"
             onClick={() => setIsCollapsed((prev) => !prev)}
-            className="inline-flex size-7 items-center justify-center border border-alt-border text-foreground transition-colors hover:bg-accent"
+            className="inline-flex size-7 items-center justify-center border border-alt-border text-foreground"
             aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
             {isCollapsed ? (
@@ -149,11 +149,11 @@ export function AppSidebar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex h-10 border-b border-alt-border text-xs uppercase tracking-wide transition-colors",
+                  "flex h-10 border-b border-border text-sm uppercase tracking-wide transition-colors",
                   isCollapsed
                     ? "items-center justify-center"
-                    : "items-center px-3 justify-start",
-                  isActive ? "bg-accent text-primary" : "text-foreground hover:bg-accent"
+                    : "items-center px-4 justify-start",
+                  isActive ? "bg-foreground text-alt-background font-bold" : "text-foreground hover:text-alt-foreground"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >

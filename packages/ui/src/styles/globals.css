@@ -8,6 +8,7 @@
 @source "../**/*.{ts,tsx}";
 
 @theme inline {
+  
     --font-heading: var(--app-font-family);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
