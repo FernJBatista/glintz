@@ -8,8 +8,7 @@
 @source "../**/*.{ts,tsx}";
 
 @theme inline {
-    --font-heading: var(--font-mono);
-    --font-mono: 'JetBrains Mono Variable', monospace;
+    --font-heading: var(--app-font-family);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -103,11 +102,14 @@
     --intensity-1: #9be9a8;/* Low habit intensity */
     --intensity-2: #40c463;/* Medium habit intensity */
     --intensity-3: #216e39;/* High habit intensity */
+    --app-font-family: var(--font-mono);
 }
 
 .dark {
     --background: #1e1e1e;
+    --alt-background: #181818;
     --foreground: #f5f3ef;
+    --alt-foreground: #a3a3a3;
     --card: var(--background);
     --card-foreground: #181818;
     --popover: #181818;
@@ -122,6 +124,7 @@
     --accent-foreground: oklch(0.985 0 0);
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
+    --alt-border: #7c7c7c;
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.556 0 0);
     --chart-1: oklch(0.87 0 0);
@@ -137,6 +140,106 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    --intensity-0: #5f5f5f;
+    --intensity-1: #9be9a8;
+    --intensity-2: #40c463;
+    --intensity-3: #216e39;
+}
+
+.forest {
+    --background: #1f2a1f;
+    --alt-background: #172017;
+    --foreground: #e8e3d6;
+    --alt-foreground: #b8b09b;
+    --card: #243024;
+    --card-foreground: #e8e3d6;
+    --popover: #243024;
+    --popover-foreground: #e8e3d6;
+    --primary: #7b8f4e;
+    --primary-foreground: #eef2df;
+    --secondary: #344632;
+    --secondary-foreground: #dce4cc;
+    --muted: #2b392a;
+    --muted-foreground: #b9c4a8;
+    --accent: #31452f;
+    --accent-foreground: #dce4cc;
+    --destructive: #b85f4b;
+    --border: #556b53;
+    --alt-border: #6e8167;
+    --input: #31452f;
+    --ring: #8da165;
+    --chart-1: #a6b977;
+    --chart-2: #7b8f4e;
+    --chart-3: #5f7341;
+    --chart-4: #445632;
+    --chart-5: #2d3e24;
+    --radius: 0.625rem;
+    --sidebar: #172017;
+    --sidebar-foreground: #e8e3d6;
+    --sidebar-primary: #8fa660;
+    --sidebar-primary-foreground: #eef2df;
+    --sidebar-accent: #31452f;
+    --sidebar-accent-foreground: #dce4cc;
+    --sidebar-border: #556b53;
+    --sidebar-ring: #8da165;
+    --intensity-0: #5f6658;
+    --intensity-1: #9fb98a;
+    --intensity-2: #7b9f5f;
+    --intensity-3: #4f6d3e;
+}
+
+.lollypop {
+    --background: #fff2f8;
+    --alt-background: #ffe8f2;
+    --foreground: #5a3a52;
+    --alt-foreground: #8a6480;
+    --card: #fff7fb;
+    --card-foreground: #5a3a52;
+    --popover: #fff7fb;
+    --popover-foreground: #5a3a52;
+    --primary: #ff7fb8;
+    --primary-foreground: #fff7fb;
+    --secondary: #f7d6ea;
+    --secondary-foreground: #6b4b63;
+    --muted: #fbe6f3;
+    --muted-foreground: #8a6480;
+    --accent: #f6dfff;
+    --accent-foreground: #704d7e;
+    --destructive: #d35a7a;
+    --border: #efc5de;
+    --alt-border: #e2b3d0;
+    --input: #fbe6f3;
+    --ring: #cf8fb7;
+    --chart-1: #ff9ec7;
+    --chart-2: #f7b8e0;
+    --chart-3: #c8a4f4;
+    --chart-4: #a8d5d1;
+    --chart-5: #f6c7a5;
+    --radius: 0.625rem;
+    --sidebar: #ffe8f2;
+    --sidebar-foreground: #5a3a52;
+    --sidebar-primary: #ff7fb8;
+    --sidebar-primary-foreground: #fff7fb;
+    --sidebar-accent: #f6dfff;
+    --sidebar-accent-foreground: #704d7e;
+    --sidebar-border: #efc5de;
+    --sidebar-ring: #cf8fb7;
+    --intensity-0: #e4bfd3;
+    --intensity-1: #f8a7c8;
+    --intensity-2: #e685bb;
+    --intensity-3: #c666a3;
+}
+
+:root[data-font="mono"] {
+  --app-font-family: var(--font-mono);
+}
+
+:root[data-font="sans"] {
+  --app-font-family: var(--font-sans);
+}
+
+:root[data-font="serif"] {
+  --app-font-family: var(--font-serif);
 }
 
 @layer base {
@@ -145,9 +248,7 @@
     }
   body {
     @apply bg-background text-foreground;
-    }
-  html {
-    @apply font-mono;
+    font-family: var(--app-font-family);
     }
   h1 {
     @apply text-2xl font-bold;
