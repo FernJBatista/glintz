@@ -6,7 +6,7 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen bg-background">
       <AppSidebar />
-      <main className="min-w-0 flex-1 p-6">{children}</main>
+      <main className="min-w-0 flex-1 pt-6 px-4 pb-12">{children}</main>
     </div>
   )
 }

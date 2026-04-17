@@ -5,7 +5,14 @@ export type HabitCreatePayload = Omit<Habit, "id" | "createdAt" | "updatedAt">;
 export type HabitUpdatePayload = Partial<
   Pick<
     Habit,
-    "name" | "description" | "color" | "icon" | "cadence" | "targetCount" | "isArchived"
+    | "name"
+    | "description"
+    | "color"
+    | "icon"
+    | "cadence"
+    | "intensity"
+    | "targetCount"
+    | "isArchived"
   >
 >;
 

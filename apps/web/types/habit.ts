@@ -1,4 +1,5 @@
 export type HabitCadence = "daily" | "weekly" | "custom";
+export type HabitIntensity = 0 | 1 | 2 | 3;
 
 export type Habit = {
   id: string;
@@ -7,6 +8,7 @@ export type Habit = {
   color?: string;
   icon?: string;
   cadence: HabitCadence;
+  intensity: HabitIntensity;
   targetCount?: number;
   isArchived: boolean;
   createdAt: string;

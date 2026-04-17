@@ -4,6 +4,12 @@ import type { HabitLog } from "@/types/habit";
 export type LogUpsertPayload = Pick<HabitLog, "habitId" | "localDate" | "value" | "note">;
 
 /** TODO: replace with Drizzle/PostgreSQL */
+export function listLogs(): HabitLog[] {
+  const { logs } = getMockDb();
+  return [...logs];
+}
+
+/** TODO: replace with Drizzle/PostgreSQL */
 export function listLogsByDate(localDate: string): HabitLog[] {
   const { logs } = getMockDb();
   return logs.filter((l) => l.localDate === localDate);

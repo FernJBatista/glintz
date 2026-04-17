@@ -17,6 +17,7 @@ export function createHabit(input: CreateHabitInput): Habit {
     color: input.color,
     icon: input.icon,
     cadence: input.cadence,
+    intensity: input.intensity,
     targetCount: input.targetCount,
     isArchived: false,
   });
